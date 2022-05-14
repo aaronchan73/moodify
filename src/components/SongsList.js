@@ -15,11 +15,14 @@ const SongsList = () => {
         index++;
         return index;
     }
-
+    
     useEffect(() => {
         getToken();
-        getSongs();
     }, []);
+
+    useEffect(() => {
+        getSongs();
+    }, [token]);
 
     const getToken = () => {
 
@@ -51,12 +54,17 @@ const SongsList = () => {
                 console.log(res.data.tracks);
             })
             .catch(error => {
-                console.log('SONG ERROR');  
+                console.log('SONG ERROR');
             })
 
     }
 
-    return songs.map(song => <Song key={incIndex()} name={song.name} id={song.id} uri={song.uri} token={token} />); 
+    return (<div>
+        <h1>{genre}</h1>
+        <div>
+            {songs.map(song => <Song key={incIndex()} name={song.name} id={song.id} uri={song.uri} token={token} />)}
+        </div>
+    </div>);
 }
 
 export default SongsList
