@@ -7,7 +7,7 @@ const Vision = () => {
     const [dict, setDict] = useState({});
     const [answer, setAnswer] = useState("");
     const fileName = "./image.jpg"
-    const keys = require('./cloud-vision.json');
+    const keys = require('./oauth2.keys.json');
     const client = new vision.ImageAnnotatorClient();
 
     useEffect(() => {
