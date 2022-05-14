@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios';
 import { client_id, client_secret } from './Credentials';
+import axios from 'axios';
 import Song from './Song';
 
 const SongsList = () => {
@@ -53,10 +53,11 @@ const SongsList = () => {
             .catch(error => {
                 console.log('error');
             })
- 
+
     }
 
-    return songs.map(song => <Song key={incIndex()} title={song.name}/>);
-} 
+
+    return songs.map(song => <Song key={incIndex()} name={song.name} id={song.id} uri={song.uri} />);
+}
 
 export default SongsList
