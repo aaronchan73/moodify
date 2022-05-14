@@ -1,22 +1,33 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { db } from './Firebase';
 import { addDoc, collection } from 'firebase/firestore';
 
-const Song = ({ name, id, uri }) => {
+const Song = ({ name, id, uri, token }) => {
 
-    useEffect(() => {
-        addSong();
-    }, [])
-
-    const addSong = async () => {
-        const docRef = await addDoc(collection(db, "songs"), {
+    const saveSong = async () => {
+        await addDoc(collection(db, "songs"), {
             name: name,
             id: id,
             uri: uri
         });
     }
 
-    return <h1>{name}</h1>;
+    // const getTrack = () => {
+
+    //     axios(`https://api.spotify.com/v1/tracks/${id}`, {
+    //         method: 'GET',
+    //         headers: { 'Authorization': 'Bearer ' + token }
+    //     })
+    //         .then(res => {
+    //             console.log(res.data)
+    //         })
+    //         .catch(error => {
+    //             console.log('TRACK ERROR');
+    //         });
+
+    // }
+
+    return <h1 onClick={() => saveSong()}>{name}</h1>; 
 }
 
 export default Song

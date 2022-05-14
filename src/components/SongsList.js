@@ -35,7 +35,7 @@ const SongsList = () => {
                 setToken(res.data.access_token);
             })
             .catch(error => {
-                console.log('error');
+                console.log('TOKEN ERROR');
             })
 
     }
@@ -51,13 +51,12 @@ const SongsList = () => {
                 console.log(res.data.tracks);
             })
             .catch(error => {
-                console.log('error');
+                console.log('SONG ERROR');  
             })
 
     }
 
-
-    return songs.map(song => <Song key={incIndex()} name={song.name} id={song.id} uri={song.uri} />);
+    return songs.map(song => <Song key={incIndex()} name={song.name} id={song.id} uri={song.uri} token={token} />); 
 }
 
 export default SongsList
