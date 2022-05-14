@@ -19,7 +19,7 @@
 //   description: Identify faces in an image using the Cloud Vision API.
 //   usage: node vision-face-detection.js <fileName>
 var dict = {};
-var answer = {};
+var answer = "";
 
 function main(fileName) {
   // [START vision_face_detection]
@@ -62,16 +62,10 @@ function main(fileName) {
 function rankEmotions() {
   for(var key in dict) {
     if (dict[key] == "VERY_LIKELY") {
-      answer = {
-        key : dict[key],
-      };
-      return answer;
+      answer = key;
     } 
   }
-  answer = {
-    key: "IMAGE NOT FOUND",
-  };
-  return answer;
+  answer = "IMAGE NOT FOUND";
 }
 
 process.on('unhandledRejection', err => {
@@ -80,3 +74,5 @@ process.on('unhandledRejection', err => {
 });
 
 main(...process.argv.slice(2));
+
+//export const ans = answer;
