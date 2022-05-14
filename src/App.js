@@ -1,3 +1,4 @@
+
 import logo from "./logo.svg";
 import react, { useState } from "react";
 import "./App.css";
@@ -5,6 +6,9 @@ import Main from "./components/Main";
 import SongsList from "./components/SongsList";
 import SongDisplay from "./components/SongDisplay";
 import './index.css'
+import SavedSongs from './components/SavedSongs';
+import Vision from './components/Vision';
+
 
 function App() {
   const [list, setList] = useState(false);
@@ -24,14 +28,19 @@ function App() {
       ) : (
         <SongDisplay/>
       )}
-        <div class="shape-blob"/>
+    <div class="shape-blob"/>
 	<div class="shape-blob one"/>
 	<div class="shape-blob two"/>
   <div class="shape-blob three"/>
   <div class="shape-blob four"/>
   <div class="shape-blob five"/>
+    <div className="App">
+      <SongsList />
+      <SavedSongs />
+    </div>
     </div>
   );
 }
+
 
 export default App;
