@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { client_id, client_secret } from './Credentials';
+import Song from './Song';
 
 const SongsList = () => {
 
     const [token, setToken] = useState("");
     const [songs, setSongs] = useState([]);
+    const [genre, setGenre] = useState("classical");
+
+    let index = 0;
+
+    const incIndex = () => {
+        index++;
+        return index;
+    }
 
     useEffect(() => {
         getToken();
@@ -33,13 +42,13 @@ const SongsList = () => {
 
     const getSongs = () => {
 
-        axios('https://api.spotify.com/v1/recommendations?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=rock&seed_tracks=0c6xIDDpzE81m2q797ordA&limit=10', {
+        axios(`https://api.spotify.com/v1/recommendations?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=${genre}&seed_tracks=0c6xIDDpzE81m2q797ordA&limit=10`, {
             method: 'GET',
             headers: { 'Authorization': 'Bearer ' + token }
         })
             .then(res => {
                 setSongs(res.data.tracks);
-                console.log(songs);
+                console.log(res.data.tracks);
             })
             .catch(error => {
                 console.log('error');
@@ -47,7 +56,7 @@ const SongsList = () => {
  
     }
 
-    return songs.map(song => <h1>{song.name}</h1>);
-}
+    return songs.map(song => <Song id={incIndex()} title={song.name}/>); 
+} 
 
 export default SongsList
