@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios';
 import { client_id, client_secret } from './Credentials';
+import axios from 'axios';
 import Song from './Song';
 import { ans } from '.../go.js'
 
@@ -10,7 +10,7 @@ const SongsList = () => {
     const [songs, setSongs] = useState([]);
     const [genre, setGenre] = useState("classical");
 
-    let index = 0;
+    let index = -1;
 
     const incIndex = () => {
         index++;
@@ -36,7 +36,7 @@ const SongsList = () => {
                 setToken(res.data.access_token);
             })
             .catch(error => {
-                console.log('error');
+                console.log('TOKEN ERROR');
             })
 
     }
@@ -52,12 +52,12 @@ const SongsList = () => {
                 console.log(res.data.tracks);
             })
             .catch(error => {
-                console.log('error');
+                console.log('SONG ERROR');  
             })
- 
+
     }
 
-    return songs.map(song => <Song id={incIndex()} title={song.name}/>); 
-} 
+    return songs.map(song => <Song key={incIndex()} name={song.name} id={song.id} uri={song.uri} token={token} />); 
+}
 
 export default SongsList
