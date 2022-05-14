@@ -11,7 +11,7 @@ function Main() {
         >
           Spotify-app.
         </h1>
-        <h1 class="justify-items-center text-[#697CAE]">
+        <h1 class="justify-items-center text-[#697CAE]"> 
           __________________________________________________________
         </h1>
       </div>
