@@ -1,16 +1,27 @@
 import React, { Component } from "react";
+import List from "./List";
+import react, { useState } from "react";
 
 function ListView() {
-  const numbers = [1, 2, 3, 4, 5];
-  const listItems = numbers.map((number) => (
-    <li class="hover:bg-white rounded-lg font-gotu" key={number}>
-      {number}
-    </li>
-  ));
-  return (
+// this.state = {showList:false};
+// onClick={() => this.setState({showList:true})}
+const [list, setList] = useState(false);
+
+return (
+  <div>
+  {!list ? (
     <div>
-      <ul class="rounded-lg bg-light-blue w-20">{listItems}</ul>
+      <button
+        class="hover:bg-white hover:text-dark-blue bg-light-blue text-dark-blue px-6 rounded-md font-gotu"
+        onClick={() => setList(!list)}
+      >
+        Generate Songs
+      </button>
     </div>
+  ) : (
+    <List />
+  )}
+      </div>
   );
 }
 

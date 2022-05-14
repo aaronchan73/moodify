@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       colors: {
         "dark-blue": "#212b42",
-        "light-blue": "#697CAE",
+        "light-blue": "#849acf",
       },
       fontFamily: {
         gotu: ["Gotu"],

@@ -1,14 +1,30 @@
 import React, { Component } from "react";
 import Song from "./Song";
 import SongsList from "./SongsList";
+import react, { useState } from "react";
 import App from "../App";
+import Main from "./Main"
 import ListView from "./ListView";
 
 function SongDisplay() {
+  const [list, setList] = useState(false);
+  
   return (
     <div class="grid grid-col-3 gap-0 place-items-center h-screen">
-      <button class="bg-light-blue text-dark-blue rounded-md px-6">Back</button>
+{!list ? (
+    <div>
+      <button class="bg-light-blue text-dark-blue rounded-md px-6"
+        onClick={() => setList(!list)}
+      >Back
+      </button>
+      <ListView/>
+    </div>
+  ) : (
+    <App />
+  )}
+
       <input class=" font-gotu rounded-lg bg-light-blue" type="file" />
+    
       <div class="hover:bg-white">
         {/* <div class='flex items-center'>
           <img src={Song.url} alt=""/>
@@ -24,7 +40,6 @@ function SongDisplay() {
         <div class='bg-light-blue'> nine </div>
         <div class='bg-light-blue'> ten</div> */}
       </div>
-      <ListView/>
     </div>
   );
 }
