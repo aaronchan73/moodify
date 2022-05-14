@@ -24,7 +24,7 @@ const SongsList = () => {
     const getToken = () => {
 
         axios('https://accounts.spotify.com/api/token', {
-            headers: {
+            headers: { 
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization': 'Basic ' + btoa(client_id + ':' + client_secret)
             },
@@ -59,4 +59,4 @@ const SongsList = () => {
     return songs.map(song => <Song key={incIndex()} name={song.name} id={song.id} uri={song.uri} token={token} />); 
 }
 
-export default SongsList
+export default SongsList 

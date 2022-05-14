@@ -15,17 +15,18 @@ function Main() {
         </h1>
       </div>
       <div>
-        <p class="max-w-prose text-[#697CAE] grid justify-items-center">
+        <p class="font-gotu max-w-prose text-[#697CAE] grid justify-items-center">
           words words words words words words words words words words words
           words words words words words words words words words words words
           words words words words words words words words words words words
-          words words words words words words
+          words words words words words words words words words
+          words words words words words words 
         </p>
       </div>
       <div>
-        <button class="px-8 rounded-md bg-light-blue text-dark-blue">
+        {/* <button class="px-8 rounded-md bg-light-blue text-dark-blue">
           Log In
-        </button>
+        </button> */}
       </div>
     </div>
   );

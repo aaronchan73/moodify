@@ -30,4 +30,4 @@ const Song = ({ name, id, uri, token }) => {
     return <h1 onClick={() => saveSong()}>{name}</h1>; 
 }
 
-export default Song
+export default Song 
