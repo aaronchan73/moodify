@@ -9,7 +9,7 @@ const SongsList = () => {
     const [songs, setSongs] = useState([]);
     const [genre, setGenre] = useState("classical");
 
-    let index = 0;
+    let index = -1;
 
     const incIndex = () => {
         index++;
@@ -56,7 +56,7 @@ const SongsList = () => {
  
     }
 
-    return songs.map(song => <Song id={incIndex()} title={song.name}/>); 
+    return songs.map(song => <Song key={incIndex()} title={song.name}/>);
 } 
 
 export default SongsList
