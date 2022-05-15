@@ -13,11 +13,11 @@ We believed that music can change the world for the better, but first, we should
 Moodify allows users to input their current emotion, and then is recommended different songs based on how they're feeling!
 Each emotion that you select (Happy, Sad, Angry, Bored, Excited) corresponds to a different music genre, which pops out a list of songs based on that genre. 
 
-Emotion to Genre:
-Happy -> Bubblegum Pop
-Sad -> Soul
-Angry -> Alternative Metal
-Bored -> R & B
+**Emotion to Genre:** <br />
+Happy -> Bubblegum Pop <br />
+Sad -> Soul <br />
+Angry -> Alternative Metal <br />
+Bored -> R & B <br />
 Excited -> Dancepop
 
 ## How we built it
