@@ -8,7 +8,7 @@ const firebaseConfig = {
   storageBucket: "spotify-app-22924.appspot.com",
   messagingSenderId: "926720785886",
   appId: "1:926720785886:web:00cc2699239aec24d5f14f",
-  measurementId: "G-LVMMRX43J4"
+  measurementId: "G-LVMMRX43J4",
 };
 
 export const app = initializeApp(firebaseConfig);

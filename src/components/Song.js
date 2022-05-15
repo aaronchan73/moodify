@@ -1,33 +1,43 @@
-import React from 'react'
-import { db } from './Firebase';
-import { addDoc, collection } from 'firebase/firestore';
+import React from "react";
+import { db } from "./Firebase";
+import { addDoc, collection } from "firebase/firestore";
 
-const Song = ({ name, id, uri, token }) => {
+const Song = ({ name, id, uri, url, imgUri }) => {
+  const saveSong = async () => {
+    await addDoc(collection(db, "songs"), {
+      name: name,
+      id: id,
+      uri: uri,
+      url: url,
+      imgUri: imgUri,
+    });
+  }
 
-    const saveSong = async () => {
-        await addDoc(collection(db, "songs"), {
-            name: name,
-            id: id,
-            uri: uri
-        });
-    }
+  function reDirect(e) {
+    window.open(url, "_blank");
+  }
 
-    // const getTrack = () => {
+  return (
+    <div class="flex flex-row gap-4 space-y-3 m-3">
+      <img class="rounded-md h-9 w-9" src={imgUri} />
 
-    //     axios(`https://api.spotify.com/v1/tracks/${id}`, {
-    //         method: 'GET',
-    //         headers: { 'Authorization': 'Bearer ' + token }
-    //     })
-    //         .then(res => {
-    //             console.log(res.data)
-    //         })
-    //         .catch(error => {
-    //             console.log('TRACK ERROR');
-    //         });
+      <h1 class="hover:bg-white rounded-md hover:text-black mb-5">
+        <button onClick={reDirect} class="mr-2 text-light-blue">
+          &#9654;
+        </button>
 
-    // }
+        {name}
 
-    return <h1 onClick={() => saveSong()}>{name}</h1>; 
-}
+        <button
+          onClick={saveSong}
+          class="ml-2 text-light-blue 
+        hover:bg-white hover:text-light-blue"
+        >
+          &#x2913;
+        </button>
+      </h1>
+    </div>
+  );
+};
 
-export default Song
+export default Song;
