@@ -1,5 +1,7 @@
 # Moodify
 
+Ever wanted to let your emotion dictate the songs you listen to? Well, Moodify's got you! Based on four common emotions, Moodify's brings up a list of recommended Spotify songs for you to listen away!
+
 ## Inspiration
 
 As music lovers, we always choose songs based on how we feel. If we're happy, we might go for something upbeat, like hip-hop. If we're sad, something slower like ballads are the way to go. We wanted to make a web app that lets users explore songs they might not listen to usually, based on their mood.
@@ -10,7 +12,7 @@ Moodify allows users to input their current emotion, and then is recommended dif
 
 ## How we built it
 
-For our front-end, we used React and Tailwind CSS for a smooth coding experience when creating the web application. For our back-end, we used the Spotify API to retrieve recommended songs, which can be stored in Firebase's NoSQL database Firestore.
+For our front-end, we used React and Tailwind CSS for a smooth coding experience when creating the web application. For our back-end, we used the Spotify API and Axios to retrieve recommended songs, which can be stored in Firebase's NoSQL database Firestore.
 
 ## Challenges we ran into
 
@@ -22,7 +24,7 @@ We're proud of being able to create a full-stack web application that is both fu
 
 ## What we learned
 
-We learned how to use React, Tailwind CSS, Firebase/Firestore, and Spotify's API.
+We learned how to use React, Tailwind CSS, Firebase/Firestore, Spotify's API, and fetching using Axios.
 
 ## What's next for Moodify
 
