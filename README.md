@@ -2,6 +2,8 @@
 
 Ever wanted to let your emotion dictate the songs you listen to? Well, Moodify's got you! Based on five common emotions, Moodify's brings up a list of recommended Spotify songs for you to listen away!
 
+<img src="https://github.com/aaronchan73/moodify/blob/main/mainPage.png" width=600 height=350>  <img src="https://github.com/aaronchan73/moodify/blob/main/songPage.png" width=600 height=350> 
+
 ## Inspiration
 
 As music lovers, we always choose songs based on how we feel. If we're happy, we might go for something upbeat, like hip-hop. If we're sad, something slower like ballads are the way to go. We wanted to make a web app that lets users explore songs they might not listen to usually, based on their mood.
