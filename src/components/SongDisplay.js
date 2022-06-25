@@ -5,7 +5,6 @@ import SavedSongs from "./SavedSongs";
 import react, { useState } from "react";
 import App from "../App";
 import Main from "./Main";
-import ListView from "./ListView";
 
 class SongDisplay extends React.Component {
   constructor(props) {

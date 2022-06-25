@@ -6,6 +6,7 @@ import SongDisplay from "./components/SongDisplay";
 import "./index.css";
 import SavedSongs from "./components/SavedSongs";
 import React, { Component } from "react";
+import FileUpload from "./components/FileUpload";
 
 function App() {
   const [list, setList] = useState(false);
