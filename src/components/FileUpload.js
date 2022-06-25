@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import axios from 'axios';
+import SongDisplay from './SongDisplay';
 
 export default function FileUpload() {
     const [file, setFile] = useState('');
@@ -23,12 +24,10 @@ export default function FileUpload() {
             }
             });
             // makes post request
-   
 
             const {fileName, filePath} = res.data;
 
             setUploadedFile({fileName, filePath});
-            retrieveReq();
         } catch(err) {
             if (err.response.status === 500) {
                 console.log('Problem with server')
@@ -37,35 +36,29 @@ export default function FileUpload() {
             }
         }
 
-        // probably fetch this to next component
-
     };
 
     function retrieveReq() {
-    var axios = require('axios');
+        setTimeout(function() {
+        console.log("5000");
+        var axios = require('axios');
+        var config = {
+        method: 'get',
+        url: 'http://localhost:5000/'
+        };
+      
+        axios(config)
+        .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+        console.log(error);
+        });
+        }, 3000)
+    }
 
-    var config = {
-    method: 'get',
-    url: 'http://localhost:5000/'
-    };
-  
-    axios(config)
-    .then(function (response) {
-    console.log(JSON.stringify(response.data));
-    const obj = JSON.parse(response.data);
-    //sendToSongDisplay(obj);
-    })
-    .catch(function (error) {
-    console.log(error);
-    });
-    };
+    const obj = retrieveReq();
 
-    // function sendToSongDisplay(JSONObj) {
-    //     obj = JSONObj
-    //     <SongDisplay
-    //                joy={JSONObj.Joy}
-    //     />
-    // }
     return (
         <Fragment>
             <form onSubmit={onSubmit}> 
@@ -83,6 +76,13 @@ export default function FileUpload() {
                 </div>
             </div>) 
             : null }
+            <SongDisplay 
+                joy={obj.Joy}
+                anger={obj.Anger}
+                sorrow={obj.Sorrow}
+                surprise={obj.Surprise}
+                />
         </Fragment>
+        
     )
     }
