@@ -1,10 +1,8 @@
 import react, { useState } from "react";
 import "./App.css";
 import Main from "./components/Main";
-import SongsList from "./components/SongsList";
 import SongDisplay from "./components/SongDisplay";
 import "./index.css";
-import SavedSongs from "./components/SavedSongs";
 import React, { Component } from "react";
 import FileUpload from "./components/FileUpload";
 
