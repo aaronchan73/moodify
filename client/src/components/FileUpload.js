@@ -1,11 +1,13 @@
 import React, { Fragment, useState } from 'react'
 import axios from 'axios';
+import Message from './Message'
 import SongDisplay from './SongDisplay';
 
 export default function FileUpload() {
     const [file, setFile] = useState('');
     const [fileName, setFileName] = useState("Choose File");
     const [uploadedFile, setUploadedFile] = useState({});
+    const [message, setMessage] = useState('');
 
     const onChange = e => {
        setFile(e.target.files[0]);
@@ -30,9 +32,9 @@ export default function FileUpload() {
             setUploadedFile({fileName, filePath});
         } catch(err) {
             if (err.response.status === 500) {
-                console.log('Problem with server')
+                setMessage('Problem with server')
             } else {
-                console.log(err.response.data.msg);
+                setMessage(err.response.data.msg);
             }
         }
 
@@ -50,6 +52,7 @@ export default function FileUpload() {
         axios(config)
         .then(function (response) {
         console.log(JSON.stringify(response.data));
+        setMessage('File Uploaded Success!')
         })
         .catch(function (error) {
         console.log(error);
@@ -61,6 +64,7 @@ export default function FileUpload() {
 
     return (
         <Fragment>
+            {message  ? <Message msg={message} />: null}
             <form onSubmit={onSubmit}> 
             <div className="mb-4">
             <input className="form-control" type="file" id="formFile" onChange={onChange}/>
