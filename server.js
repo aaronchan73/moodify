@@ -8,6 +8,8 @@ const app = express();
 app.use(cors());
 app.use(fileUpload());
 
+// when the user clicks on the upload button we will POST the request (axios) to this server 
+// handling the response using post 
 app.post('/upload', (req, res) => {
 if (req.files === null) {
     return res.status(400).json({ msg: 'No file uploaded'});

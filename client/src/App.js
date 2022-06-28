@@ -31,7 +31,7 @@ function App() {
         </div>
       ) : (
         <div>
-          <SongDisplay />
+          <FileUpload />
         </div>
       )}
     </div>
