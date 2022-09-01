@@ -3,10 +3,10 @@
 Ever wanted to let your emotion dictate the songs you listen to? Well, Moodify's got you! Based on five common emotions, Moodify brings up a list of recommended Spotify songs for you to listen away!
 
 ## Home Screen
-<img src="https://github.com/aaronchan73/moodify/blob/main/mainPage.png" width=600 height=350>  
+<img src="https://github.com/aaronchan73/moodify/blob/main/client/mainPage.png" width=600 height=350>  
 
 ## Main Screen
-<img src="https://github.com/aaronchan73/moodify/blob/main/songPage.png" width=600 height=350> 
+<img src="https://github.com/aaronchan73/moodify/blob/main/client/songPage.png" width=600 height=350> 
 
 ## Inspiration
 
