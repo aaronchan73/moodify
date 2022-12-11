@@ -1,10 +1,10 @@
 {
   "type": "service_account",
   "project_id": "custom-program-350202",
-  "private_key_id": "a37f3e3c252036356724bdc03dccb505199716ca",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDLBUhuX3f+HYWX\nVaqHgumxpRJu6AIKwRD/qtTf1YtiUlHD4x4Dr42hY8GIX3yVHK1PsU1OADp3anc1\n+k9HY1k6aT7x4YASP7PaImSlWfCfFJ0kRoBwZ+K0sCI9ZcDlMsQwREGD+CbvdPnh\nqkyDy8qg1jwkQ3IfpcOLRyizmRwCjDWNj1v+MPydZ8s/NMidHlu02n82fDZ0uJCT\nlVr6eM+gzAho0ClwLe66Aq7b2u4r73m34zdGJzZIrj4GwjWml4qmNIr5C1SMOa84\nH35Al5xj03/W4N4bt1j1UE2A9q0weuN49rx5W9vc/xYC6/Qwq+fhfmm6uQVMT6FY\nIexBwVCFAgMBAAECggEAMPvm1H6jYIQ1+eQY/5Y2FX8bGfhPmdGobM+GijUnasMq\n6EURtljyprh/dwx27jFbnalNWh8S/EILXlI1M6fEXSQMpGbAtGZ7WgvHVeAD/xYF\nrj12euiN2gPPVxoIdySPEog9eH50wnzqV6jzyi7vBmx6WVOOoxUnP6EdMGwmRnSo\n19vnGxuBt3so6pVo8W03dzO80LvqEg0Uwwz+IsrugWDSLzL0tOQXs5C4z3hWTfqv\nMPyLDXVpFlylKwDytmF6Kw000sQw0UdZY+56TfHjOJwXExgMfrwmPcyuMwGboFBV\n8IWZxTIPs872DNT6/lXA8KrOn6claEywZ9qjNsQlJwKBgQDsUpi0dH2tVG7HSoM2\nG16SLpPd04bsuLVbHXxi8nxH0WOXgO5vKY0kqCy01G2fc3W5dTziv16MaJ766jj3\nQVLHgl9PnmO2Y1D+8vOWjR/RMDye0fvxOm4HVPBhCgQkFFkdcPcDu0ZQvQv+GOJD\njzzi/gKg74h70yYC9D8xXxtI8wKBgQDb7NPxuiV3Xvn/IJpdJ/+0uuna3Evhxc4L\neJxk3r314x8sZg3Yni9zoVOcZpZ5OLsS49Kd1WKzMCFWZixV479sQ/STwjAUYsCL\nHDjDlUE7UL31PsU/qV1g2HtAgKHJhZ/xrlkA1J97RvTBUZhMyqP+2eMaOonEBCZY\nVif0yAbepwKBgQDLmUVygsIb6JggHnP404+ghXxjKnAd1ex4+WhGnv6vqRgSWMQT\nBUtSf4k0qadgLksIYpb4C0Nb2G7PYad+bcrxk8Klh6IEaoBHheySkjcNNG+lrOdQ\nJrTQoD8Qe16h7t3v3XkSv++Oc7C3U5zr86XTMl/1YyjE9V7UQLWIxZVuPQKBgQCj\nSJirtnsuv7N5OqmhVJtDgisytbEZNZWfarMjKUV8lF6GxlatZ/TvMu4zBu/dnMM4\naTHswYuAYtG9pipwsqFjLqkeM2UjHZa7Mf7rJ5vBAFepCCvG8mZECzanU1nLl4yD\nEeE+/p5SFwKNrZkYGrPb+cXlqWSzxij6GS2dTg3brQKBgCKke3zLxGFZd6QrwPkw\nAMS3UP4+KsQ7ZNJdvKSqK6aWRsQeUaxPux5QCHy75OzVYZhq1Wn5HwdFla6vMPl1\nF4W6DPtr53iBOHQO/jMfHWqxi+XwF8G1ZZCWrZk7gcHPN99WVwWT94TOfvF11NGM\n0UPxE5xbfZIwptvb+HSd7Us0\n-----END PRIVATE KEY-----\n",
+  "private_key_id": "${process.env.private_key_id}",
+  "private_key": "${process.env.private_key}",
   "client_email": "teamon@custom-program-350202.iam.gserviceaccount.com",
-  "client_id": "111209042730391968186",
+  "client_id": "${process.env.client_id}",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
